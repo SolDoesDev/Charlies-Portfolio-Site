@@ -317,6 +317,7 @@
 
 <script>
 import portraitSrc from '@/assets/default-avatar.png';
+import axios from 'axios';
 
 export default {
   name: 'HomePage',
@@ -440,6 +441,28 @@ export default {
         reveals.forEach((el) => revealEl(el, true));
       }, 1100);
     },
+    async fetchVideos() {
+      try {
+        const API_KEY = process.env.VUE_APP_YOUTUBE_API_KEY;
+        const CHANNEL_ID = process.env.VUE_APP_YOUTUBE_CHANNEL_KEY;
+        if (!API_KEY || !CHANNEL_ID) return;
+        const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+          params: { part: 'snippet', channelId: CHANNEL_ID, maxResults: 8, order: 'date', type: 'video', key: API_KEY },
+        });
+        const items = response.data.items || [];
+        if (items.length) {
+          this.videos = items.map((item, i) => ({
+            n: String(i + 1).padStart(2, '0'),
+            title: item.snippet.title,
+            ch: item.snippet.channelTitle,
+            rt: '',
+            ytId: item.id.videoId,
+          }));
+        }
+      } catch (e) {
+        console.error('YouTube fetch error:', e);
+      }
+    },
     setupNavScroll() {
       const navLinks = {};
       document.querySelectorAll('[data-nav]').forEach((l) => {
@@ -477,6 +500,7 @@ export default {
     window.addEventListener('keydown', this._onKey);
     this.setupScrollReveal();
     this.setupNavScroll();
+    this.fetchVideos();
   },
 
   beforeUnmount() {
