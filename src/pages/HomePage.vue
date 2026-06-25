@@ -300,10 +300,7 @@
     <!-- ==================== FOOTER ==================== -->
     <footer style="background:#14130F; color:#A8A07E; padding:clamp(36px,5vw,56px) clamp(20px,5vw,72px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
       <div style="display:flex; align-items:center; gap:14px;">
-        <span style="position:relative; width:38px; height:38px; border-radius:50%; border:1.5px solid #A8A07E; display:flex; align-items:center; justify-content:center; flex:none;">
-          <span style="position:absolute; width:12px; height:12px; border-radius:50%; box-shadow:inset -4px 2px 0 0 #A8A07E; top:7px; right:8px;"></span>
-          <span style="font-family:'Space Mono',monospace; font-size:9px; font-weight:700; color:#EFE7C8; margin-top:8px;">NWC</span>
-        </span>
+        <img :src="logoSrc" alt="NightWolfe Cinema" style="width:38px; height:38px; object-fit:contain; flex:none; opacity:0.85;" />
         <span style="font-family:'Newsreader',serif; font-size:18px; color:#EFE7C8;">NightWolfe Cinema</span>
       </div>
       <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">© {{ currentYear }} · Where visions howl to life</div>
