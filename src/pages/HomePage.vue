@@ -7,10 +7,7 @@
     <!-- ==================== HEADER ==================== -->
     <header id="top" style="position:sticky; top:0; z-index:8000; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px clamp(20px,5vw,72px); background:rgba(250,242,205,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(23,21,15,0.12);">
       <a href="#top" style="display:flex; align-items:center; gap:14px; text-decoration:none; color:#17150F;">
-        <span style="position:relative; width:42px; height:42px; border-radius:50%; border:1.5px solid #17150F; display:flex; align-items:center; justify-content:center; flex:none;">
-          <span style="position:absolute; width:14px; height:14px; border-radius:50%; box-shadow:inset -5px 2px 0 0 #17150F; top:7px; right:8px;"></span>
-          <span style="font-family:'Space Mono',monospace; font-size:10px; font-weight:700; letter-spacing:0.08em; margin-top:9px;">NWC</span>
-        </span>
+        <img :src="logoSrc" alt="NightWolfe Cinema" style="width:42px; height:42px; object-fit:contain; flex:none;" />
         <span style="display:flex; flex-direction:column; line-height:1;">
           <span style="font-family:'Newsreader',serif; font-weight:700; font-size:20px; letter-spacing:0.01em;">NightWolfe</span>
           <span style="font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:0.42em; text-transform:uppercase; color:#8A8470; margin-top:3px;">Cinema</span>
@@ -317,6 +314,7 @@
 
 <script>
 import portraitSrc from '@/assets/default-avatar.png';
+import logoSrc from '@/assets/logo.png';
 import axios from 'axios';
 
 export default {
@@ -325,6 +323,7 @@ export default {
   data() {
     return {
       portraitSrc,
+      logoSrc,
       lightbox: null,
       menuOpen: false,
       sent: false,
