@@ -70,12 +70,8 @@
 
     <!-- ==================== SHOWREEL ==================== -->
     <section class="nwc-reveal" style="width:100%; padding:0 clamp(20px,5vw,72px) clamp(16px,3vw,32px);">
-      <div class="nwc-mediacard nwc-showreel-frame" @click="openLightbox({ title: 'Showreel 2025', ytId: '' })" style="position:relative; width:100%; aspect-ratio:21/9; max-height:80vh; border-radius:3px; overflow:hidden; background:#14130F; cursor:pointer;">
-        <div class="nwc-ph">
-          <div class="nwc-ph-perf" style="top:0;"></div>
-          <span class="nwc-ph-cap">Showreel pending</span>
-          <div class="nwc-ph-perf" style="bottom:0;"></div>
-        </div>
+      <div class="nwc-mediacard nwc-showreel-frame" @click="openLightbox({ title: 'Showreel 2025', videoSrc: '/nightwolfecinema.mp4' })" style="position:relative; width:100%; aspect-ratio:21/9; max-height:80vh; border-radius:3px; overflow:hidden; background:#14130F; cursor:pointer;">
+        <video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" src="/nightwolfecinema.mp4"></video>
         <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(20,19,15,0.15) 0%,rgba(20,19,15,0.05) 45%,rgba(20,19,15,0.78) 100%); pointer-events:none;"></div>
         <div style="position:absolute; top:24px; left:24px; display:flex; align-items:center; gap:10px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#EFE7C8; pointer-events:none;">
           <span style="width:8px; height:8px; border-radius:50%; background:#FF3B30;"></span> Rec · Showreel 2025
@@ -288,7 +284,8 @@
       <div @click.stop style="position:relative; width:100%; max-width:1120px;">
         <button @click="closeLightbox()" style="position:absolute; top:-46px; right:0; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#EFE7C8; background:transparent; border:0;">Close ✕</button>
         <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:3px; overflow:hidden; box-shadow:0 40px 120px rgba(0,0,0,0.6);">
-          <iframe v-if="lightboxHasVideo" :src="lightboxSrc" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+          <iframe v-if="lightboxHasYt" :src="lightboxSrc" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+          <video v-else-if="lightboxHasLocal" :src="lightbox.videoSrc" controls autoplay style="position:absolute; inset:0; width:100%; height:100%;"></video>
           <div v-else style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; padding:24px;">
             <span style="width:74px; height:74px; border-radius:50%; border:1.5px solid rgba(239,231,200,0.45); display:flex; align-items:center; justify-content:center;">
               <span style="width:0; height:0; border-style:solid; border-width:12px 0 12px 20px; border-color:transparent transparent transparent #FAF2CD; margin-left:5px;"></span>
@@ -363,11 +360,14 @@ export default {
   },
 
   computed: {
-    lightboxHasVideo() {
+    lightboxHasYt() {
       return !!(this.lightbox && this.lightbox.ytId);
     },
+    lightboxHasLocal() {
+      return !!(this.lightbox && this.lightbox.videoSrc);
+    },
     lightboxSrc() {
-      return this.lightboxHasVideo
+      return this.lightboxHasYt
         ? `https://www.youtube.com/embed/${this.lightbox.ytId}?autoplay=1&rel=0`
         : '';
     },
