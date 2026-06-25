@@ -50,7 +50,7 @@
     </div>
 
     <!-- ==================== HERO ==================== -->
-    <section id="home" style="padding:clamp(48px,8vw,104px) clamp(20px,5vw,72px) clamp(28px,4vw,48px); scroll-margin-top:90px;">
+    <section id="home" style="padding:clamp(48px,8vw,104px) clamp(20px,5vw,72px) clamp(28px,4vw,48px); scroll-margin-top:90px; max-width:1400px; margin-left:auto; margin-right:auto;">
       <div class="nwc-reveal" style="display:flex; align-items:center; gap:14px; margin-bottom:clamp(28px,4vw,48px);">
         <span style="width:9px; height:9px; border-radius:50%; background:var(--accent,#1C857B); flex:none;"></span>
         <span style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.24em; text-transform:uppercase; color:#46423A;">Cinematography · Videography · Editing</span>
@@ -102,20 +102,20 @@
     </div>
 
     <!-- ==================== STUDIO ==================== -->
-    <section id="studio" style="padding:clamp(72px,11vw,160px) clamp(20px,5vw,72px); max-width:1400px; scroll-margin-top:90px;">
-      <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#8A8470; margin-bottom:clamp(26px,3vw,44px);">( Studio )</div>
-      <p class="nwc-reveal" style="margin:0; font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,4vw,58px); line-height:1.22; letter-spacing:-0.01em; max-width:20ch;">Every story deserves to be <span style="font-style:italic;">seen, heard, and felt.</span> We shape raw ideas into visual experiences — <span style="color:var(--accent,#1C857B);">bold, dynamic, alive.</span></p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:clamp(28px,4vw,64px); margin-top:clamp(48px,7vw,96px); border-top:1px solid rgba(23,21,15,0.13); padding-top:clamp(32px,4vw,52px);">
+    <section id="studio" style="padding:clamp(36px,5vw,72px) clamp(20px,5vw,72px); max-width:1400px; margin-left:auto; margin-right:auto; scroll-margin-top:90px;">
+      <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#8A8470; margin-bottom:clamp(26px,3vw,44px); text-align:center;">( Studio )</div>
+      <p class="nwc-reveal" style="margin:0 auto; font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,4vw,58px); line-height:1.22; letter-spacing:-0.01em; max-width:20ch; text-align:center;">Every story deserves to be <span style="font-style:italic;">seen, heard, and felt.</span> We shape raw ideas into visual experiences — <span style="color:var(--accent,#1C857B);">bold, dynamic, alive.</span></p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:clamp(28px,4vw,64px); margin-top:clamp(48px,7vw,96px); border-top:1px solid rgba(23,21,15,0.13); padding-top:clamp(32px,4vw,52px); text-align:center;">
         <div v-for="svc in services" :key="svc.n" class="nwc-reveal">
           <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.16em; color:#8A8470; margin-bottom:14px;">{{ svc.n }}</div>
           <h3 style="margin:0 0 10px; font-family:'Newsreader',serif; font-weight:600; font-size:clamp(22px,2.2vw,30px);">{{ svc.title }}</h3>
-          <p style="margin:0; font-size:15px; line-height:1.6; color:#46423A; max-width:34ch;">{{ svc.desc }}</p>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#46423A;">{{ svc.desc }}</p>
         </div>
       </div>
     </section>
 
     <!-- ==================== WORK ==================== -->
-    <section id="work" style="padding:clamp(40px,5vw,72px) clamp(20px,5vw,72px) clamp(72px,11vw,160px); scroll-margin-top:90px;">
+    <section id="work" style="padding:clamp(40px,5vw,72px) clamp(20px,5vw,72px) clamp(72px,11vw,160px); scroll-margin-top:90px; max-width:1400px; margin-left:auto; margin-right:auto;">
       <div class="nwc-reveal" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:clamp(36px,5vw,64px);">
         <div>
           <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#8A8470; margin-bottom:18px;">01 — Selected Work</div>
@@ -123,7 +123,7 @@
         </div>
         <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8470; max-width:26ch; line-height:1.7;">A selection of recent films, edits & motion work.</div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr)); gap:clamp(28px,3vw,52px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:clamp(28px,3vw,52px);">
         <div v-for="v in videos" :key="v.n" @click="openLightbox(v)" class="nwc-reveal nwc-card-hover">
           <div class="nwc-mediacard" :class="{ 'has-thumb': v.ytId }" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:3px; overflow:hidden; background:#14130F;">
             <div class="nwc-ph">
@@ -156,7 +156,7 @@
     </section>
 
     <!-- ==================== GAME TRAILERS ==================== -->
-    <section id="trailers" style="padding:clamp(40px,5vw,72px) clamp(20px,5vw,72px) clamp(72px,11vw,160px); scroll-margin-top:90px;">
+    <section id="trailers" style="padding:clamp(40px,5vw,72px) clamp(20px,5vw,72px) clamp(72px,11vw,160px); scroll-margin-top:90px; max-width:1400px; margin-left:auto; margin-right:auto;">
       <div class="nwc-reveal" style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:clamp(36px,5vw,64px);">
         <div>
           <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#8A8470; margin-bottom:18px;">02 — Game Trailers</div>
@@ -232,7 +232,7 @@
     </section>
 
     <!-- ==================== CONTACT ==================== -->
-    <section id="contact" style="padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px); scroll-margin-top:90px;">
+    <section id="contact" style="padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px); scroll-margin-top:90px; max-width:1400px; margin-left:auto; margin-right:auto;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:clamp(48px,7vw,112px); align-items:start; max-width:1500px;">
         <div class="nwc-reveal">
           <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#8A8470; margin-bottom:clamp(24px,3vw,36px);">04 — Let's talk</div>
@@ -298,12 +298,14 @@
     </div>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer style="background:#14130F; color:#A8A07E; padding:clamp(36px,5vw,56px) clamp(20px,5vw,72px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
-      <div style="display:flex; align-items:center; gap:14px;">
-        <img :src="logoSrc" alt="NightWolfe Cinema" style="width:38px; height:38px; object-fit:contain; flex:none; opacity:0.85;" />
-        <span style="font-family:'Newsreader',serif; font-size:18px; color:#EFE7C8;">NightWolfe Cinema</span>
+    <footer style="background:#14130F; color:#A8A07E; padding:clamp(36px,5vw,56px) clamp(20px,5vw,72px);">
+      <div style="max-width:1400px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <img :src="logoSrc" alt="NightWolfe Cinema" style="width:38px; height:38px; object-fit:contain; flex:none; opacity:0.85;" />
+          <span style="font-family:'Newsreader',serif; font-size:18px; color:#EFE7C8;">NightWolfe Cinema</span>
+        </div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">© {{ currentYear }} · Where visions howl to life</div>
       </div>
-      <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">© {{ currentYear }} · Where visions howl to life</div>
     </footer>
 
   </div>
@@ -397,6 +399,8 @@ export default {
       this.sent = true;
     },
     setupScrollReveal() {
+      if (this._io) { this._io.disconnect(); this._io = null; }
+      if (this._revealFallback) { clearTimeout(this._revealFallback); this._revealFallback = null; }
       const reveals = Array.from(document.querySelectorAll('.nwc-reveal'));
       const revealEl = (el, instant) => {
         if (el.hasAttribute('data-shown')) return;
@@ -454,6 +458,7 @@ export default {
             rt: '',
             ytId: item.id.videoId,
           }));
+          this.$nextTick(() => this.setupScrollReveal());
         }
       } catch (e) {
         console.error('YouTube fetch error:', e);
