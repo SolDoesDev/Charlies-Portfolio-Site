@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(git commit -m ' *)",
-      "Bash(sort -t_ -k3 -n)"
+      "Bash(sort -t_ -k3 -n)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\ndcvl\\\\OneDrive\\\\Documents\\\\Dev Projects\\\\charlie-portfolio-site\\\\.github\\\\workflows\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\ndcvl\\OneDrive\\Documents\\Dev Projects\\charlie-portfolio-site\\.github"
     ]
   }
 }
