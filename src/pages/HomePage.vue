@@ -164,6 +164,11 @@
         </div>
         <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8470; max-width:28ch; line-height:1.7;">Cinematic cuts for launch reveals, teasers & gameplay edits.</div>
       </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:16px; padding:14px 28px; margin-bottom:clamp(28px,3vw,52px); background:rgba(23,21,15,0.05); border:1px solid rgba(23,21,15,0.14); border-radius:2px;">
+        <span style="width:8px; height:8px; border-radius:50%; background:var(--accent,#1C857B); flex:none;"></span>
+        <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:#46423A;">Coming Soon</span>
+        <span style="width:8px; height:8px; border-radius:50%; background:var(--accent,#1C857B); flex:none;"></span>
+      </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr)); gap:clamp(28px,3vw,52px);">
         <div v-for="t in trailers" :key="t.n" @click="openLightbox(t)" class="nwc-reveal nwc-card-hover">
           <div class="nwc-mediacard" :class="{ 'has-thumb': t.ytId }" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:3px; overflow:hidden; background:#14130F;">
