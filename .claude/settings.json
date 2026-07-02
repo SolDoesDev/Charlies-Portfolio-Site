@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git commit -m ' *)",
       "Bash(sort -t_ -k3 -n)",
-      "Bash(mkdir -p \"c:\\\\Users\\\\ndcvl\\\\OneDrive\\\\Documents\\\\Dev Projects\\\\charlie-portfolio-site\\\\.github\\\\workflows\")"
+      "Bash(mkdir -p \"c:\\\\Users\\\\ndcvl\\\\OneDrive\\\\Documents\\\\Dev Projects\\\\charlie-portfolio-site\\\\.github\\\\workflows\")",
+      "Bash(gh repo *)",
+      "PowerShell(gh repo view --json owner,name -q '.owner.login + \"/\" + .name' 2>&1)",
+      "PowerShell(git remote get-url origin)"
     ],
     "additionalDirectories": [
       "c:\\Users\\ndcvl\\OneDrive\\Documents\\Dev Projects\\charlie-portfolio-site\\.github"
