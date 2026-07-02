@@ -9,7 +9,13 @@
       "PowerShell(git remote get-url origin)",
       "Bash(git branch *)",
       "Bash(git push *)",
-      "Bash(git commit --allow-empty -m ' *)"
+      "Bash(git commit --allow-empty -m ' *)",
+      "Bash(curl -s \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\")",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\" -o /tmp/out.json)",
+      "Bash(echo \"exit:$?\")",
+      "Read(//tmp/**)",
+      "PowerShell(try { $r = Invoke-RestMethod -Uri \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\" -Headers @{ \"User-Agent\" = \"test\" }; $r.workflow_runs | Select-Object name, status, conclusion, head_branch, created_at, html_url | Format-List } catch { Write-Output \"ERROR: $_\" })",
+      "PowerShell(try { $r = Invoke-RestMethod -Uri \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/pages\" -Headers @{ \"User-Agent\" = \"test\" }; $r | Format-List } catch { Write-Output \"ERROR:\"; Write-Output $_.Exception.Message; if \\($_.Exception.Response\\) { $stream = $_.Exception.Response.GetResponseStream\\(\\); $reader = New-Object System.IO.StreamReader\\($stream\\); Write-Output $reader.ReadToEnd\\(\\) } })"
     ],
     "additionalDirectories": [
       "c:\\Users\\ndcvl\\OneDrive\\Documents\\Dev Projects\\charlie-portfolio-site\\.github"
