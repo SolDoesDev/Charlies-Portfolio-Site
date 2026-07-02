@@ -6,7 +6,10 @@
       "Bash(mkdir -p \"c:\\\\Users\\\\ndcvl\\\\OneDrive\\\\Documents\\\\Dev Projects\\\\charlie-portfolio-site\\\\.github\\\\workflows\")",
       "Bash(gh repo *)",
       "PowerShell(gh repo view --json owner,name -q '.owner.login + \"/\" + .name' 2>&1)",
-      "PowerShell(git remote get-url origin)"
+      "PowerShell(git remote get-url origin)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(git commit --allow-empty -m ' *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\ndcvl\\OneDrive\\Documents\\Dev Projects\\charlie-portfolio-site\\.github"
