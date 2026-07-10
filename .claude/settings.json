@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ' *)",
+      "Bash(sort -t_ -k3 -n)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\ndcvl\\\\OneDrive\\\\Documents\\\\Dev Projects\\\\charlie-portfolio-site\\\\.github\\\\workflows\")",
+      "Bash(gh repo *)",
+      "PowerShell(gh repo view --json owner,name -q '.owner.login + \"/\" + .name' 2>&1)",
+      "PowerShell(git remote get-url origin)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(git commit --allow-empty -m ' *)",
+      "Bash(curl -s \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\")",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\" -o /tmp/out.json)",
+      "Bash(echo \"exit:$?\")",
+      "Read(//tmp/**)",
+      "PowerShell(try { $r = Invoke-RestMethod -Uri \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\" -Headers @{ \"User-Agent\" = \"test\" }; $r.workflow_runs | Select-Object name, status, conclusion, head_branch, created_at, html_url | Format-List } catch { Write-Output \"ERROR: $_\" })",
+      "PowerShell(try { $r = Invoke-RestMethod -Uri \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/pages\" -Headers @{ \"User-Agent\" = \"test\" }; $r | Format-List } catch { Write-Output \"ERROR:\"; Write-Output $_.Exception.Message; if \\($_.Exception.Response\\) { $stream = $_.Exception.Response.GetResponseStream\\(\\); $reader = New-Object System.IO.StreamReader\\($stream\\); Write-Output $reader.ReadToEnd\\(\\) } })",
+      "Bash(gh run *)",
+      "Bash(rm -rf node_modules && npm install 2>&1 | tail -40)",
+      "Bash(curl -s -o /tmp/resp.json -w \"HTTP_CODE:%{http_code}\\\\n\" \"https://api.github.com/repos/SolDoesDev/Charlies-Portfolio-Site/actions/runs?per_page=5\")",
+      "Bash(curl -sI https://github.com)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\ndcvl\\OneDrive\\Documents\\Dev Projects\\charlie-portfolio-site\\.github",
+      "C:\\Users\\ndcvl\\OneDrive\\Documents\\Dev Projects\\charlie-portfolio-site\\node_modules"
+    ]
+  }
+}
